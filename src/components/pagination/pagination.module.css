@@ -13,3 +13,8 @@
   cursor: pointer;
   border-radius: 15%;
 }
+
+.button:disabled{
+  background-color: rgba(202, 91, 91, 0.473);
+  cursor: not-allowed;
+}
