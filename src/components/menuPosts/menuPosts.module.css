@@ -1,9 +1,9 @@
 .items {
   margin-top: 35px;
-  margin-bottom:60px;
+  margin-bottom: 60px;
   display: flex;
   flex-direction: column;
-  gap:35px;
+  gap: 35px;
 }
 
 .item {
@@ -14,9 +14,8 @@
 
 .imageContainer {
   flex: 1;
+  aspect-ratio: 1/1;
   position: relative;
-  width: 100px;
-  height: 40px;
 }
 
 .image {
@@ -39,30 +38,35 @@
   color: white;
   width: max-content;
 }
-.category.travel{
+
+.category.travel {
   background-color: #ff7857;
 }
 
-.culture{
+.culture {
   background-color: #ffb14f;
 }
-.food{
+
+.food {
   background-color: #7fb881;
 }
-.fashion{
+
+.fashion {
   background-color: #ff7887;
 }
-.coding{
-  background-color: #775eac;
+
+.coding {
+  background-color: #775aec;
 }
-.style{
+
+.style {
   background-color: #789cff;
 }
 
 .postTitle {
   font-size: 18px;
   font-weight: 500;
-  color: var(--softTExtColor);
+  color: var(--softTextColor);
 }
 
 .detail {

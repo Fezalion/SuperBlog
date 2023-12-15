@@ -1,11 +1,17 @@
+"use client"
+
+
 import Link from "next/link";
 import styles from "./comments.module.css";
 import Image from "next/image";
+import useSWR from "swr";
+import { useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 const Comments = () => {
 
 
-  const status = "authenticated"
+  const status = useSession()
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Comments</h1>
