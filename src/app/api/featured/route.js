@@ -1,13 +1,14 @@
 import prisma from "@/utils/connect";
 import { NextResponse } from "next/server";
 
-//gets last post
-export const GET = async () => {
+//gets the most recent post
+export const GET = async (req) => {
   try {
-    const post = await prisma.post.findFirst({
+    const post = await prisma.post.findMany({
       orderBy: {
         createdAt: "desc",
       },
+      take: 1,
     });
     return new NextResponse(JSON.stringify(post, { status: 200 }));
   } catch (err) {
