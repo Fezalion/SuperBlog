@@ -1,22 +1,36 @@
-import React from 'react'
-import styles from './featured.module.css'
-import Image from 'next/image'
+import React, { useEffect, useState } from 'react';
+import styles from './featured.module.css';
+import Image from 'next/image';
 
 const Featured = () => {
+  const [latestPost, setLatestPost] = useState(null);
+
+  useEffect(() => {
+    const fetchLatestPost = async () => {
+      const res = await fetch('https://www.fettahb.me/api/posts?sort=desc&limit=1');
+      const data = await res.json();
+      setLatestPost(data.posts[0]);
+    };
+
+    fetchLatestPost();
+  }, []);
+
+  if (!latestPost) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
-        <b>Hey fettahbaba here!</b> Discover my stories and creative ideas</h1>
+        <b>Hey fettahbaba here!</b> Discover my stories and creative ideas
+      </h1>
       <div className={styles.post}>
         <div className={styles.imgContainer}>
-          <Image src="/p1.jpeg" alt="" fill className={styles.image}/>
+          <Image src={latestPost.image} alt={latestPost.title} fill className={styles.image} />
         </div>
         <div className={styles.textContainer}>
-          <h1 className={styles.postTitle}>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h1>
-          <p className={styles.postDesc}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim pariatur quod autem culpa 
-            deserunt reprehenderit illo tempore, ex unde atque officia id repellendus, optio sunt 
-            nulla veniam exercitationem natus non.
-          </p>
+          <h1 className={styles.postTitle}>{latestPost.title}</h1>
+          <p className={styles.postDesc}>{latestPost.description}</p>
           <button className={styles.button}>Read More</button>
         </div>
       </div>
