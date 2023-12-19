@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const getData = async()=>{
   const res = await fetch("https://www.fettahb.me/api/categories",{
-    cashe: "no-store",
+    cache: "no-store",
   });
 
   if(!res.ok){

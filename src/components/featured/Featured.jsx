@@ -1,26 +1,20 @@
-"use client"
-
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from './featured.module.css';
 import Image from 'next/image';
+import Link from "next/link";
 
-const Featured = () => {
-  const [latestPost, setLatestPost] = useState(null);
+//gets the latest post from the api
+const getLatestPost = async () => {
+  const res = await fetch("https://www.fettahb.me/api/featured", {
+    cache: "no-store",
+  })
+  return res.json();
+};
 
-  useEffect(() => {
-    const getLatestPost = async () => {
-      const res = await fetch('https://www.fettahb.me/api/featured');
-      const data = await res.json();
-      setLatestPost(data);
-    };
 
-    getLatestPost();
-  }, []);
-
-  if (!latestPost) {
-    return <div>Loading...</div>;
-  }
-
+const Featured = async () => {
+  const data = await getLatestPost();
+  console.log(data);
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
@@ -28,11 +22,11 @@ const Featured = () => {
       </h1>
       <div className={styles.post}>
         <div className={styles.imgContainer}>
-          <Image src={latestPost.img} alt={latestPost.title} fill className={styles.image} />
+        <Image src={data.img} fill className={styles.image} />
         </div>
         <div className={styles.textContainer}>
-          <h1 className={styles.postTitle}>{latestPost.title}</h1>
-          <div className={styles.desc}>{latestPost.desc}</div>
+          <h1 className={styles.postTitle}>{data.title}</h1>
+          <div className={styles.desc}>{data.desc}</div>
           <button className={styles.button}>Read More</button>
         </div>
       </div>
