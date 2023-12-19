@@ -47,3 +47,18 @@ export const POST = async (req) => {
     );
   }
 };
+
+// GET THE LATEST POST
+export const LATEST = async (req) => {
+  try {
+    const post = await prisma.post.findFirst({
+      orderBy: { createdAt: "desc" },
+    });
+    return new NextResponse(JSON.stringify(post, { status: 200 }));
+  } catch (err) {
+    console.log(err);
+    return new NextResponse(
+      JSON.stringify({ message: "Something went wrong!" }, { status: 500 })
+    );
+  }
+};

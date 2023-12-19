@@ -6,13 +6,13 @@ const Featured = () => {
   const [latestPost, setLatestPost] = useState(null);
 
   useEffect(() => {
-    const fetchLatestPost = async () => {
-      const res = await fetch('https://www.fettahb.me/api/posts?sort=desc&limit=1');
+    const getLatestPost = async () => {
+      const res = await fetch('https://www.fettahb.me/api/posts/latest');
       const data = await res.json();
-      setLatestPost(data.posts[0]);
+      setLatestPost(data);
     };
 
-    fetchLatestPost();
+    getLatestPost();
   }, []);
 
   if (!latestPost) {
