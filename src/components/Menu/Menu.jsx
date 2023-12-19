@@ -3,7 +3,7 @@ import styles from "./menu.module.css"
 import Link from "next/link";
 import Image from 'next/image';
 import MenuPosts from '../menuPosts/menuPosts';
-import MenuCategories from '../menuCategories/menuCategories';
+import MenuCategories from '../menuCategories/MenuCategories';
 
 const Menu = () => {
 	return (
