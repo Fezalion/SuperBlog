@@ -4,36 +4,52 @@ import Pagination from '../pagination/Pagination';
 import Card from '../card/Card';
 
 
-const getData = async (page, cat) => {
-	const res = await fetch(`https://www.fettahb.me/api/posts?page=${page}&cat=${cat || ""}`, {
-		cache: "no-store",
-	});
+const getData = async (cat) => {
+	let page = 1;
+	let posts = [];
+	while (true) {
+			const res = await fetch(`https://www.fettahb.me/api/posts?page=${page}&cat=${cat || ""}`, {
+					cache: "no-store",
+			});
 
-	if (!res.ok) {
-		throw new Error("Failed");
+			if (!res.ok) {
+					throw new Error("Failed");
+			}
+
+			const data = await res.json();
+			posts = [...posts, ...data.posts];
+
+			if (data.posts.length === 0) {
+					break;
+			}
+
+			page++;
 	}
-	return res.json();
+
+	return { posts, count: posts.length };
 }
 
 const CardList = async ({ page, cat }) => {
-
-	const { posts, count } = await getData(page, cat)
+	const { posts, count } = await getData(cat)
 
 	const POST_PER_PAGE = 2;
 
+	const sortedPosts = posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+	const displayedPosts = sortedPosts.slice((page - 1) * POST_PER_PAGE, page * POST_PER_PAGE);
+
 	const hasPrev = POST_PER_PAGE * (page - 1) > 0;
 	const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;
-	const sortedPosts = posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
 	return (
-		<div className={styles.container}>
-			<h1 className={styles.title}>Recent Posts</h1>
-			<div className={styles.posts}>
-				{sortedPosts?.map((item) => (
-					<Card item={item} key={item._id} />)
-				)}
+			<div className={styles.container}>
+					<h1 className={styles.title}>Recent Posts</h1>
+					<div className={styles.posts}>
+							{displayedPosts?.map((item) => (
+									<Card item={item} key={item._id} />)
+							)}
+					</div>
+					<Pagination hasPrev={hasPrev} hasNext={hasNext} />
 			</div>
-			<Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} />
-		</div>
 	);
 };
 
