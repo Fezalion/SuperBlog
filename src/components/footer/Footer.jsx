@@ -11,7 +11,7 @@ const Footer = () => {
           <Image src="/logo.png" alt="lama blog" width={50} height={50} />
           <h1 className={styles.logoText}>Lamablog</h1>
         </div>
-        <p className={styles.desc}>H-hello there, lovely hooman! 💕✨ Ben Fettahu-nyan! (´꒳``) Bu s-sooo kawaii sanal dünyada renkli bir varlık desu~! 💖💫 Müzik-chan, kitap-kunlar ve kahve-senpai benim için birer tutkusu desu. 🎶📚☕️ Hayal gücümün sınırlarını kawaii bir şekilde zorlamayı, yeni şeyler öğrenmeyi ve her gün biraz daha kawaii bir şekilde gülümsemeyi seviyowum desu! (*≧ω≦) Siz de meraklı mısınız? Let's kawaii adventures together! (灬º‿º灬)♡ Nyaa~! 🚀💖🌍✨
+        <p className={styles.desc}>H-hello there, lovely hooman! 💕✨ Ben Fettahu-nyan! (´´꒳``) Bu s-sooo kawaii sanal dünyada renkli bir varlık desu~! 💖💫 Müzik-chan, kitap-kunlar ve kahve-senpai benim için birer tutkusu desu. 🎶📚☕️ Hayal gücümün sınırlarını kawaii bir şekilde zorlamayı, yeni şeyler öğrenmeyi ve her gün biraz daha kawaii bir şekilde gülümsemeyi seviyowum desu! (*≧ω≦) Siz de meraklı mısınız? Lets kawaii adventures together! (灬º‿º灬)♡ Nyaa~! 🚀💖🌍✨
         </p>
         <div className={styles.icons}>
           <Image src="/facebook.png" alt="" width={18} height={18} />
