@@ -9,7 +9,7 @@ const Featured = () => {
 
   useEffect(() => {
     const getLatestPost = async () => {
-      const res = await fetch('https://www.fettahb.me/api/featured/latest');
+      const res = await fetch('https://www.fettahb.me/api/featured');
       const data = await res.json();
       setLatestPost(data);
     };
