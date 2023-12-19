@@ -1,4 +1,4 @@
-"use client"
+"use Client"
 
 import React, { useEffect, useState } from 'react';
 import styles from './featured.module.css';
@@ -9,7 +9,7 @@ const Featured = () => {
 
   useEffect(() => {
     const getLatestPost = async () => {
-      const res = await fetch('https://www.fettahb.me/api/posts/latest');
+      const res = await fetch('https://www.fettahb.me/api/featured/latest');
       const data = await res.json();
       setLatestPost(data);
     };
