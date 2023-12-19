@@ -5,7 +5,7 @@ import Card from '../card/Card';
 
 
 const getData = async (page, cat) => {
-	const res = await fetch(`fettahb.me/api/posts?page=${page}&cat=${cat || ""}`, {
+	const res = await fetch(`super-blog-fettahbs-projects.vercel.app/api/posts?page=${page}&cat=${cat || ""}`, {
 		cache: "no-store",
 	});
 
