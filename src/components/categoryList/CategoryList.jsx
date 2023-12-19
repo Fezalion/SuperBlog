@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const getData = async()=>{
-  const res = await fetch("super-blog-fettahbs-projects.vercel.app/api/categories",{
+  const res = await fetch("super-blog-kappa.vercel.app/api/categories",{
     cashe: "no-store",
   });
 

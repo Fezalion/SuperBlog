@@ -22,7 +22,7 @@ const fetcher = async (url) => {
 
 const Comments = ({ postSlug }) => {
   const { status } = useSession()
-  const { data, mutate, isLoading } = useSWR(`super-blog-fettahbs-projects.vercel.app/api/comments?postSlug=${postSlug}`, fetcher);
+  const { data, mutate, isLoading } = useSWR(`super-blog-kappa.vercel.app/api/comments?postSlug=${postSlug}`, fetcher);
   const [desc, setDesc] = useState("");
   const handleSubmit = async () => {
     await fetch("/api/comments", {
