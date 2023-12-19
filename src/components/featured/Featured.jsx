@@ -32,7 +32,7 @@ const Featured = () => {
         </div>
         <div className={styles.textContainer}>
           <h1 className={styles.postTitle}>{latestPost.title}</h1>
-          <div className={styles.desc} dangerouslySetInnerHTML={{ __html: latestPost.desc.substring(0,60) }}/>
+          <div className={styles.desc}>{latestPost.desc}</div>
           <button className={styles.button}>Read More</button>
         </div>
       </div>
