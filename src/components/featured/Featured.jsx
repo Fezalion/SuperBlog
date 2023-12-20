@@ -18,15 +18,19 @@ const Featured = async () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
-        <b>Hey fettahbaba here!</b> Discover my stories and creative ideas
+        <b>Merhabalar!</b> Denemelerime göz atmaya ne dersiniz?
       </h1>
       <div className={styles.post}>
-        <div className={styles.imgContainer}>
-        <Image src={data.img} fill className={styles.image} />
+      <div className={styles.imgContainer}>
+          <Image src="/p1.jpeg" alt="" fill className={styles.image} />
         </div>
         <div className={styles.textContainer}>
           <h1 className={styles.postTitle}>{data.title}</h1>
-          <div className={styles.desc}>{data.desc}</div>
+          <div className={styles.desc}>&emsp;&emsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
           <button className={styles.button}>Read More</button>
         </div>
       </div>
