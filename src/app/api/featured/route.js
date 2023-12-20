@@ -14,7 +14,7 @@ export const GET = async (req) => {
   } catch (err) {
     console.log(err);
     return new NextResponse(
-      JSON.stringify({ message: "Something went wrong!" }, { status: 500 })
+      JSON.stringify({ message: "Couldnt get featured data" }, { status: 500 })
     );
   }
 };

@@ -26,7 +26,7 @@ const Featured = async () => {
         </div>
         <div className={styles.textContainer}>
           <h1 className={styles.postTitle}>{latestPost[0].title}</h1>
-          <div className={styles.desc} dangerouslySetInnerHTML={{ __html:latestPost[0].desc }} />
+          <div className={styles.desc} dangerouslySetInnerHTML={{ __html:latestPost[0].desc.substring(0,100) }} />
           <button className={styles.button}><Link href={`/posts/${latestPost[0].slug}`} className={styles.link}>
           Read More
         </Link></button>
