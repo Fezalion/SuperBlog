@@ -32,7 +32,7 @@ const getData = async (cat) => {
 const CardList = async ({ page, cat }) => {
 	const { posts, count } = await getData(cat)
 
-	const POST_PER_PAGE = 2;
+	const POST_PER_PAGE = 4;
 
 	const sortedPosts = posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 	const displayedPosts = sortedPosts.slice((page - 1) * POST_PER_PAGE, page * POST_PER_PAGE);

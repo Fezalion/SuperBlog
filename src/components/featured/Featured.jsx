@@ -13,8 +13,8 @@ const getLatestPost = async () => {
 
 
 const Featured = async () => {
-  const data = await getLatestPost();
-  console.log(data);
+  const latestPost = await getLatestPost();
+  console.log("sss",latestPost);
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
@@ -22,16 +22,14 @@ const Featured = async () => {
       </h1>
       <div className={styles.post}>
       <div className={styles.imgContainer}>
-          <Image src="/p1.jpeg" alt="" fill className={styles.image} />
+          <Image src={latestPost.img} alt="" fill className={styles.image} />
         </div>
         <div className={styles.textContainer}>
-          <h1 className={styles.postTitle}>{data.title}</h1>
-          <div className={styles.desc}>&emsp;&emsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-          <button className={styles.button}>Read More</button>
+          <h1 className={styles.postTitle}>{latestPost[0].title}</h1>
+          <div className={styles.desc} dangerouslySetInnerHTML={{ __html:latestPost[0].desc }} />
+          <button className={styles.button}><Link href={`/posts/${latestPost[0].slug}`} className={styles.link}>
+          Read More
+        </Link></button>
         </div>
       </div>
     </div>
