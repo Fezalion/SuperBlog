@@ -14,7 +14,6 @@ const getLatestPost = async () => {
 
 const Featured = async () => {
   const latestPost = await getLatestPost();
-  console.log("sss",latestPost);
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
