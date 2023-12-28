@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .imgContainer {
@@ -17,6 +17,9 @@
 
 .textContainer {
   margin-left: 20px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .textContainer h2 {
