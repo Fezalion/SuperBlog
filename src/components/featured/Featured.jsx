@@ -21,7 +21,7 @@ const Featured = async () => {
       </h1>
       <div className={styles.post}>
         <div className={styles.imgContainer}>
-          <Image src={latestPost.img} alt="" fill className={styles.image} />
+          <Image src={latestPost[0].img} alt="" fill className={styles.image} />
         </div>
         <div className={styles.textContainer}>
           <h1 className={styles.postTitle}>{latestPost[0].title}</h1>
