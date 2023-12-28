@@ -22,7 +22,7 @@ const Featured = async () => {
       <div className={styles.post}>
       {latestPost.img && (
         <div className={styles.imgContainer}>
-          <Image src={`${"/"[latestPost.img]}`} alt="" fill className={styles.image} />
+          <Image src={latestPost.img} alt="" fill className={styles.image} />
         </div>
       )}
         <div className={styles.textContainer}>
