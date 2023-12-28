@@ -20,9 +20,11 @@ const Featured = async () => {
         <b>Merhabalar!</b> Denemelerime göz atmaya ne dersiniz?
       </h1>
       <div className={styles.post}>
-      <div className={styles.imgContainer}>
-          <Image src={latestPost.img} alt="" fill className={styles.image} />
+      {latestPost.img && (
+        <div className={styles.imgContainer}>
+          <Image src={`${"/"[latestPost.img]}`} alt="" fill className={styles.image} />
         </div>
+      )}
         <div className={styles.textContainer}>
           <h1 className={styles.postTitle}>{latestPost[0].title}</h1>
           <div className={styles.desc} dangerouslySetInnerHTML={{ __html:latestPost[0].desc.substring(0,100) }} />
