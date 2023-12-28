@@ -11,17 +11,7 @@ const AboutPage = () =>{
   </div>
   <div className={styles.textContainer}>
     <h2>Muhammed Fettah Başdemir</h2>
-    <p>Merhaba, ben [Adınız Soyadınız]!</p>
-    <p></p>
-    <p>🚀 Yazılım Geliştirici ve [Sizin Uzmanlık Alanınız]</p>
-    <p>🌐 Web Teknolojileri ve Uygulama Geliştirme ile ilgileniyorum</p>
-    <p>💼 Şu anda [Şirket Adı] firmasında çalışıyorum</p>
-    <p>🔧 Ana uzmanlık alanlarım: [Ana Uzmanlık Alanlarınız]</p>
-    <p>🚀 Sürekli öğrenmeye ve gelişen teknolojilere ayak uydurmaya odaklıyım</p>
-    <p>📚 Kendimi geliştirmek için düzenli olarak [Okuma, Kurslar, Seminerler] gibi kaynaklardan yararlanıyorum</p>
-    <p>📢 Ayrıca, [Sosyal Medya Hesaplarınız veya Kişisel Blogunuz] üzerinden yazılım ve teknolojiyle ilgili düşüncelerimi paylaşıyorum<br/></p>
-    <p>🌍 İletişim kurmak ve yeni projelerde işbirliği yapmak beni heyecanlandırıyor, bu yüzden benimle iletişime geçmekten çekinmeyin!<br/></p>
-    <p>edefim, teknoloji dünyasındaki değişimlere ayak uydurarak, sürekli öğrenerek ve deneyimlerimi paylaşarak hem kişisel hem de profesyonel olarak gelişmek. Eğer benimle aynı tutkulara sahipseniz, birlikte çalışmayı çok isterim!</p>
+    <p>Merhabalar, ben Fettah. Çocukluğumdan beri ilgi duyduğum uygulama ve websitesi geliştirme hobimi 2022 yılında profesyonelliğe çevirme kararıyla üniversite eğitimime ara verdim. O andan beri çeşitli projelerle uğraşıyorum. C++ 20 ve DirectX 12 kullarak geliştirmekte olduğum, en kibar söylemle, vasat bir oyun motorum var. Kendimi geliştirmek için .Net kullanarak yazmış olduğum bir websitesi vardı ve bu yazıyı okuduğunuz blogu ise yeni öğrendiğim havalı NextJS framework'ü ile yazdım. Asıl ilgi alanım backend olmasıyla birlikte yeni şeylere olan merakımdan dolayı bu blog üzerinde sürekli geliştirmeler yapmaya çalışacağım. Şu an Glomil adlı şirket backend geliştirici olarak çalışmaktayım. Elektronik müziği ve bilim-kurguları severim. Ve okuduğum sayısız bilim-kurgu'dan bir tanesi bile gerçekçi tahminlerde bulunduğunu var sayarsam, yapay zekanın en iyi ihtimalle başımızı ağrıtacağını düşünüyorum. Bazen temiz kod yazarım, ama genel olarak yazdığım şeyleri okumaya çalışmak antik bir dili çözümlemeyi anımsatır.</p>
   </div>
 </div>
 
